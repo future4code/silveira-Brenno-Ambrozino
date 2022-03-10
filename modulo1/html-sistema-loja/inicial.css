@@ -1,0 +1,22 @@
+h1{
+    background-color: darkorchid;
+    color: gold;
+    display: inline;
+}
+
+.red-blue{
+    background-color: crimson;
+    color: gold;
+    display: inline;
+}
+
+a{
+    background-color: gold;
+}
+
+#vermelho-roxo{
+    background-color: cornflowerblue;
+    color: gold;
+    display: inline;
+}
+

@@ -86,6 +86,11 @@ div img {
     font-size: 60px;
 }
 
+ol, .fras1, h3{
+    position:relative;
+    top: 170px;
+}
+
 /**
   *
   *  ESTILOS COMPRAR 

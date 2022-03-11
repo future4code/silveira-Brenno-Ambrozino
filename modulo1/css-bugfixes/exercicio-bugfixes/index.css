@@ -45,6 +45,7 @@ div>p:first-child {
 .botao-amarelo:hover {
     background-color: #c44f00;
     margin: auto;
+    cursor: pointer;
 }
 
 .container {
@@ -128,11 +129,21 @@ td button {
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #635a3d;
+    cursor: pointer;
 }
 
 td{
     text-align: center;
+}
+
+td button:hover{
+    background-color: #c44f00;
+    cursor: pointer;
+}
+
+td button:active{
+    color: white;
 }
 
 

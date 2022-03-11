@@ -48,6 +48,7 @@ div img {
 
 .botao-amarelo:hover {
     background-color: #c44f00;
+    margin: auto;
 }
 
 .container {
@@ -84,7 +85,6 @@ div img {
     padding: 100px 0;
     font-size: 60px;
 }
-
 
 /**
   *

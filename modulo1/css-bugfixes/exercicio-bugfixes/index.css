@@ -134,6 +134,13 @@ td button {
     background-color: #635a3d
 }
 
-.texto-tabela{
+td{
     text-align: center;
 }
+
+.tamanho-imagem{
+    width: 10%;
+}
+
+
+

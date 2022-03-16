@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+.container-cabecalho{
+    display: flex;
+    background-color: black;
+    border-bottom: 5px solid black;
+}
+
+.foto-de-perfil{
+    width: 10%;
+    height: 10%;
+    margin: 5px 0px 0px 50px;
+    border-radius: 50%;
+}
+
+.container-nome{
+    margin-top: 55px;
+    margin-left: 20px;
+    color: white;
+}
+
+.button-menu{
+    background-color: black;
+    color:white;
+    border: 1px solid white; 
+    border-radius: 50px;
+    padding: 15px 30px;
+}
+
+.button-menu:hover{
+    background-color: rgb(233, 227, 227);
+    color:black;
+    cursor: pointer;
+}
+
+.container-menu{
+    margin-top: 45px;
+    margin-left: 260px;
+}
+
+/*------------------------------------------------------------------------------------*/
+
+.container-titulo{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container-icones{
+    display: flex;
+    margin-top: 50px;
+}
+
+.icone-insta{
+    width: 300%;
+}
+
+.icone-face{
+    width: 270%;
+    position:relative;
+    top: 8px;
+    left: 48px;
+}
+
+.icone-in{
+    width: 70%;
+    position: relative;
+    right: 70px;
+}
+
+.container-insta, .container-face, .container-in{
+    margin-left: 225px;
+}
+
+.button-icones{
+    border: none;
+    background-color: white;
+}
+
+.button-icones:hover{
+    cursor: pointer;
+}
+
+.container-descricao{
+    display:flex;
+}
+
+.container-descrica-insta{
+    margin-left: 200px;
+}
+
+.container-descricao-face{
+    margin-left: 100px;
+}

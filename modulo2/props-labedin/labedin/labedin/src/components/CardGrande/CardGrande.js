@@ -1,5 +1,4 @@
 import React from 'react';
-import './CardGrande.css'
 
 function CardGrande(props) {
     return (

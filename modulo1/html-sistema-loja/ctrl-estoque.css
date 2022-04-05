@@ -1,0 +1,79 @@
+h1{
+    background-color: darkorchid;
+    color: gold;
+    display: inline;
+}
+
+a{
+    background-color: gold;
+}
+
+h2{
+    background-color: cornflowerblue;
+    color: gold;
+    display: inline;
+}
+
+th{
+    background-color: red;
+}
+
+.wanda{
+    background-color:red;
+}
+
+.wanda2{
+    background-color: brown;
+}
+
+.wanda3{
+    background-color: crimson;
+}
+
+.jean{
+    background-color: yellow;
+}
+
+.jean2{
+    background-color: blue;
+}
+
+.jean3{
+    background-color:darkorchid;
+}
+
+.storm{
+    background-color: gray;
+}
+
+.storm2{
+    background-color: gold;
+}
+
+.storm3{
+    background-color:antiquewhite;
+}
+
+.magneto{
+    background-color: purple;
+}
+
+.magneto2{
+    background-color: brown;
+}
+
+.magneto3{
+    background-color: darkblue;
+}
+
+.emma{
+    background-color: bisque;
+}
+
+.emma2{
+    background-color:blanchedalmond;
+}
+
+.emma3{
+    background-color: beige;
+}

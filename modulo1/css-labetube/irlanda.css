@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#cabecalho{
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+    background-color: orange;
+    font-size: 1.5vw;
+}
+
+#titulo{
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+}
+
+#titulo img{
+    width: 70px;
+    border-radius: 50%;
+}
+
+#titulo h1{
+    padding-left: 1.5vw;
+}
+
+#caixa{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#caixa input{
+    height: 2.8vw;
+    width: 14.3vw;
+    background-color: transparent;
+    border-radius: 2vw;
+    border: 0.2vw black solid;
+    padding-left: 1vw;
+    font-size: 1.2vw;
+}
+
+#lupa{
+    width: 2vw;
+    padding-right: 0.5vw;
+}
+/*---------------------------------------------------------*/
+main{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#video{
+    padding: 1vw;
+}
+
+#titulo{
+    padding: 1vw;
+}
+/*---------------------------------------------------------*/
+#rodape{
+    display: flex;
+    padding: 1%;
+    background-color: rgb(63, 61, 61);
+    font-size: 0.8vw;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#rodape button{
+    height: 2vw;
+    width: 6vw;
+    background-color:rgb(63, 61, 61) ;
+    border-color: orange;
+    color: orange;
+    border-radius: 0.2vw;
+    font-size: 1.2vw;
+}
+#rodape div{
+    padding-right: 4.7vw;
+}
+
+#rodape button:hover{
+    background-color: orange;
+    color: rgb(63, 61, 61);
+    border-color: orange;
+    cursor: pointer;
+}

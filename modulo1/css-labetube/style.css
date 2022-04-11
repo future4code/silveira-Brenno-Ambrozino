@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#cabecalho{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5vw;
+    background-color: orange;
+    font-size: 1.5vw;
+}
+
+#titulo{
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+}
+
+#titulo img{
+    width: 5vw;
+    border-radius: 50%;
+}
+
+#titulo h1{
+    padding-left: 1.5vw;
+}
+
+#caixa{
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+    
+}
+
+#caixa input{
+    height: 2.8vw;
+    width: 14.3vw;
+    background-color: transparent;
+    border-radius: 2vw;
+    border: 0.2vw black solid;
+    padding-left: 1vw;
+    font-size: 1.2vw;
+}
+
+#lupa{
+    width: 2vw;
+    padding-right: 0.5vw;
+}
+
+/*----------------------------------------------------------*/
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 1.8vw;
+    column-gap: 1.8%;
+    margin: 1.8%;
+    flex-grow: 1;
+}
+
+#medias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: darkgray 1px solid;
+    border-radius: 2vw;
+}
+
+#medias img{
+    width: 100%;
+    border-radius: 1.8vw 1.8vw 0vw 0vw;
+    
+}
+
+#medias button{
+    border-color: transparent;
+    border-radius: 2vw 2vw 0vw 0vw;
+}
+#medias button:hover{
+    cursor:pointer;
+    border: orange solid 3px ;
+    
+}
+
+#medias h2{
+    font-size: 1.6vw;
+}
+/*----------------------------------------------------------*/
+#rodape{
+    display: flex;
+    padding: 1%;
+    background-color: rgb(63, 61, 61);
+    font-size: 0.8vw;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#rodape button{
+    height: 2vw;
+    width: 6vw;
+    background-color:rgb(63, 61, 61) ;
+    border-color: orange;
+    color: orange;
+    border-radius: 0.2vw;
+    font-size: 1.2vw;
+}
+#rodape div{
+    padding-right: 4.7vw;
+}
+
+#rodape button:hover{
+    background-color: orange;
+    color: rgb(63, 61, 61);
+    border-color: orange;
+    cursor: pointer;
+}
+
+/*----------------------------------------------------------*/
+
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    
+    #cabecalho{
+        padding: 10px;
+        font-size: 8px;
+    }
+
+    #caixa input{
+        height: 5vw;
+        width: 30vw;
+        border-radius: 10vw;
+        border: 0.2vw black solid;
+        padding-left: 3vw;
+        font-size: 8px;
+    }
+    
+    #lupa{
+        width: 3vw;
+        padding-right: 1vw;
+        border-top: 1vw solid orange ;
+    }
+
+    main{
+        grid-template-columns: 1fr;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    #medias{
+        border: none;
+        align-items: flex-start;
+    }
+
+    #medias img{
+        border-radius: 0;
+    }
+
+    #medias button{
+        border: none;
+    }
+
+    #medias h2{
+        font-size: 8px;
+        padding: 0px 5px 10px 5px;
+    }
+
+    #rodape{
+        font-size: 3.7px;
+    }
+
+    #rodape button{
+        height: 100%;
+        background-color: orange;
+        color: white;
+    }
+}

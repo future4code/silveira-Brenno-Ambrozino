@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/*-------------------------------------------------------*/
+
+.container-cabecalho{
+    display: flex;
+    justify-content: space-between;
+    background-color: mediumvioletred;
+    align-items: center;
+    height: 40px;
+    padding: 0px 15px;
+}
+
+.container-bolinho{
+    display: flex;
+    align-items: center;
+    width: 5%;
+}
+
+.icone-bolinho{
+    width: 40%;
+}
+
+button{
+    padding: 2px 16px;
+}
+
+/*-----------------------------------------------------*/
+
+.container-conteudo{
+    display: flex;
+    flex-grow: 1;
+}
+
+.container-menu{
+    background-color: #f2d0e0;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#home, #produtos, #carrinho{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+} 
+
+.home, .produtos, .carrinho{
+    display: flex;
+    align-items: center;
+}
+
+.palavra{
+    padding-left: 10px;
+}
+
+.icones{
+    width: 10%;
+}
+
+.container-imagens{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    margin: 20px;
+    
+}
+
+.bolos{
+    width: 100%;
+}
+
+.bolo1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 5px darkgray;
+    text-align: center;
+}
+
+/*-----------------------------------------------------*/
+
+.container-rodape{
+    display: flex;
+    background-color: mediumvioletred;
+    align-items: center;
+    height: 40px;
+}
+
+.frase-rodape{
+    margin: auto;
+}
+
+
+

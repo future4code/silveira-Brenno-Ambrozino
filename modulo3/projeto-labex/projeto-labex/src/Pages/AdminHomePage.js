@@ -73,11 +73,11 @@ const AdminHomePage = () => {
   const listTrips = trip && trip.trips.map(
     (trip) =>{
       return <div key ={trip.id}>
-        <button key={trip.id} onClick={()=>goToTripDetailsPage()} >{trip.name}</button>
+        <button key={trip.id} onClick={()=>goToTripDetailsPage(trip.id)} >{trip.name}</button>
         <button onClick={()=>deleteTrip(trip.id)}>x</button>
         </div>
 
-    })
+  })
     
   return (
     <div>

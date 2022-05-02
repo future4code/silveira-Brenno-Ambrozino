@@ -31,7 +31,7 @@ const ListTripsPage = () => {
           <li key={trip.name}>Nome: {trip.name}</li>
           <li key={trip.description}>Descrição: {trip.description}</li>
           <li key={trip.planet}>Planeta: {trip.planet}</li>
-          <li key={trip.durationInDays}>Duração:{trip.durationInDays}</li>
+          <li key={trip.durationInDays}>Duração: {trip.durationInDays} dias</li>
           <li key={trip.date}>Data: {trip.date}</li>
           </Card>
 

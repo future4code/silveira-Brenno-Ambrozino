@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import {goToLoginPage} from '../Routes/coordinator'
+import { goToLoginPage } from '../Routes/coordinator'
 import { goBack } from '../Routes/coordinator'
 import { goToCreateTripPage } from '../Routes/coordinator'
 import { useState } from 'react'
@@ -21,9 +21,11 @@ export const useProtecedPage =()=>{
 }
 
 const AdminHomePage = () => {
-  const navigate = useNavigate()
 
   const [trip, setTrip] = useState();
+
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   const getTrips = () => {
     axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/brenno-ambrozino-silveira/trips").then(
@@ -32,7 +34,10 @@ const AdminHomePage = () => {
       });
   };
 
-  const token = localStorage.getItem("token");
+  useEffect(() => {
+    getTrips();
+  }, []);
+
   const deleteTrip =(id) =>{
     axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/brenno-ambrozino-silveira/trips/${id}`, {
       headers: {
@@ -45,20 +50,7 @@ const AdminHomePage = () => {
     }).catch((er)=>{
       console.log(er.res)
     })
-  }
-
-  const listTrips = trip && trip.trips.map(
-    (trip) =>{
-      return <div key ={trip.id}>
-        <button key={trip.id}>{trip.name}</button>
-        <button onClick={()=>deleteTrip(trip.id)}>x</button>
-        </div>
-
-    })
-  useEffect(() => {
-    getTrips();
-  }, []);
-    
+  };
 
   useEffect(()=> {
     const token = localStorage.getItem('token')
@@ -72,7 +64,21 @@ const AdminHomePage = () => {
     }).catch((er) =>{
       console.log('Deu erro:', er.res)
     })
-  },[])
+  },[]);
+
+  const goToTripDetailsPage = (id)=>{
+    navigate(`/admin/trips/${id}`)
+  }
+
+  const listTrips = trip && trip.trips.map(
+    (trip) =>{
+      return <div key ={trip.id}>
+        <button key={trip.id} onClick={()=>goToTripDetailsPage()} >{trip.name}</button>
+        <button onClick={()=>deleteTrip(trip.id)}>x</button>
+        </div>
+
+    })
+    
   return (
     <div>
       <p>Painel Amnistrativo</p>

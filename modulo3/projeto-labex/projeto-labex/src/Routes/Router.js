@@ -3,6 +3,9 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ListTripsPage from '../Pages/ListTripsPage'
 import ApplicationFormPage from '../Pages/ApplicationFormPage'
 import LoginPage from '../Pages/LoginPage'
+import TripDetailsPage from '../Pages/TripDetailsPage'
+import CreateTripPage from '../Pages/CreateTripPage'
+import AdminHomePage from '../Pages/AdminHomePage'
 
 export const Router = () => {
     return(
@@ -12,9 +15,9 @@ export const Router = () => {
             <Route path = "trips/list" element={<ListTripsPage/>}/>
             <Route path = "trips/application" element={<ApplicationFormPage/>} />
             <Route path = "login" element={<LoginPage/>}/>
-            <Route path = "admin/trips/list" />
-            <Route path = "admin/trips/create"/>
-            <Route path = "admin/trips/:id" />
+            <Route path = "admin/trips/list" element={<AdminHomePage/>}/>
+            <Route path = "admin/trips/create" element={<CreateTripPage/>} />
+            <Route path = "admin/trips/:id" element={<TripDetailsPage/>}/>
           </Routes>
       </BrowserRouter>
     )

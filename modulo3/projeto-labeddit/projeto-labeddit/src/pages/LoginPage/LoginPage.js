@@ -1,15 +1,34 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import Header from '../../components/Header/Header'
+import { ScreenContainer } from './Styled'
+import { SignUpBottomContainer } from './Styled'
+import { goToSignUpPage } from '../../routes/coordinator'
+import { useHistory } from 'react-router-dom'
+import LoginForm from './LoginForm'
+import useUnProtectedPage  from '../../hooks/useUnProtectedPage'
 
 const LoginPage = () => {
+
+  const history = useHistory()
+  useUnProtectedPage()
+
   return (
-    <div>
-      LoginPage
-      <Button variant="outlined" color="primary">
-       ISH
-      </Button>
-    </div>
+    <ScreenContainer>
+      <h1>LabEddit</h1>
+      <p>O projeto de rede social da Labenu</p>
+      <LoginForm/>
+      <SignUpBottomContainer>
+        <Button 
+        variant={"outlined"} 
+        color={"primary"}
+        type={"submit"}
+        onClick={() => goToSignUpPage(history) }
+        fullWidth
+        >
+          Crie uma Conta!
+        </Button>
+      </SignUpBottomContainer>
+    </ScreenContainer>
   )
 }
 

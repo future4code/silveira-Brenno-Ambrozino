@@ -6,6 +6,7 @@ export const goToLoginPage = (history) => {
     history.push("/")
 } 
 
+
 export const goToPostPage = (history) => {
     history.push("/post")
 } 

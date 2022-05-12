@@ -10,7 +10,7 @@ import Header from '../components/Header/Header'
 const Router = () => {
   return (
     <BrowserRouter>
-        <Header/>
+        {/* <Header/> */}
         <Switch>
             <Route exact path = "/">
                 <LoginPage/>

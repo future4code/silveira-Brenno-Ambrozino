@@ -1,20 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
 import { StyledToolbar } from './Styled'
 import { useHistory } from 'react-router-dom'
-import { goToSignUpPage } from '../../routes/coordinator'
 import { goToLoginPage } from '../../routes/coordinator'
 
-const Header = () => {
+const Header = (props) => {
   
   const history = useHistory()
+
+  const token = localStorage.getItem("token")
+
+  const logout = () => {
+    localStorage.removeItem("token")
+  }
+
+  const rightButtonAction = () => {
+    if(token) {
+      logout()
+      props.setRightButtonText("Login")
+      goToLoginPage(history)
+    } else {
+      goToLoginPage(history)
+    }
+  }
 
   return (
       <AppBar position="static">
         <StyledToolbar>
-        <Button onClick={()=>goToSignUpPage(history)} color="inherit">Cadastro</Button>
-          <Button onClick={()=>goToLoginPage(history)} color="inherit">Login</Button>
+          <Button color="inherit">LabEddit</Button>
+          <Button onClick={rightButtonAction} color="inherit">{props.rightButtonText}</Button>
         </StyledToolbar>
       </AppBar>
   );

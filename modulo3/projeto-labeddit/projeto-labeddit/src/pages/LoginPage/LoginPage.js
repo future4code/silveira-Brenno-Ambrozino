@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom'
 import LoginForm from './LoginForm'
 import useUnProtectedPage  from '../../hooks/useUnProtectedPage'
 
-const LoginPage = () => {
+const LoginPage = (props) => {
 
   const history = useHistory()
   useUnProtectedPage()
@@ -16,7 +16,7 @@ const LoginPage = () => {
     <ScreenContainer>
       <h1>LabEddit</h1>
       <p>O projeto de rede social da Labenu</p>
-      <LoginForm/>
+      <LoginForm rightButtonText={props.rightButtonText} setRightButtonText={props.setRightButtonText}/>
       <SignUpBottomContainer>
         <Button 
         variant={"outlined"} 

@@ -13,7 +13,7 @@ const SignUpForm = () => {
   const history = useHistory()
 
   const onSubmitForm = (event) => {
-      console.log(form)
+    console.log(form)
     event.preventDefault()
     SignUp(form, clear, history)
   }

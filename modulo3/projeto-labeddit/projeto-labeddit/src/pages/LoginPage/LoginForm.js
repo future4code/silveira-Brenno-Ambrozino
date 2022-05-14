@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField'
 import { useHistory } from 'react-router-dom'
 import { Login } from '../../services/users'
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 
   const [form, onChange, clear] = useForm({email:"", password:"" })
 
@@ -15,7 +15,7 @@ const LoginForm = () => {
   const onSubmitForm = (event) => {
       console.log(form)
     event.preventDefault()
-    Login(form, clear, history)
+    Login(form, clear, history, props.setRightButtonText)
   }
 
 

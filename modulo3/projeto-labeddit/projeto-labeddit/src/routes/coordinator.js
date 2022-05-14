@@ -7,8 +7,8 @@ export const goToLoginPage = (history) => {
 } 
 
 
-export const goToPostPage = (history) => {
-    history.push("/post")
+export const goToPostPage = (history, id) => {
+    history.push(`/post/${id}`)
 } 
 
 export const goToSignUpPage = (history) => {

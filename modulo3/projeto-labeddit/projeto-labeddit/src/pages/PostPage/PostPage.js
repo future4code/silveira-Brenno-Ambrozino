@@ -1,12 +1,15 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import useProtectedPage from '../../hooks/useProtectedPage'
-import CreateCommentCard from '../../components/CreateCommentCard/CreateCommentCard'
+import CreateCommentCard from './CreateCommentCard'
 import { PostsListContainer } from './Styled'
 import useRequestData from '../../hooks/useRequestData'
 import  { BASE_URL }  from '../../constants/urls'
 import CommentsCard from '../../components/CommentsCard/CommentsCard'
 import Comments from '../../components/Comments/Comments'
+import Loading from '../../components/Loading/Loading'
+import { CreatePostVote, ChangePostVote } from '../../services/posts'
+import {CreateCommentVote, ChangeCommentVote} from '../../services/comments'
 
 const PostPage = () => {
 
@@ -23,12 +26,17 @@ const PostPage = () => {
       title={posts.title}
       body={posts.body}
       username={posts.username}
+      numeroComentarios={posts.commentCount}
+      like={()=>CreatePostVote(posts.id)}
+      dislike={()=>ChangePostVote(posts.id)}
       />
     )
   })
 
+  console.log(post)
+
   const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
-  console.log(comments)
+  // console.log(comments)
   const commentsCard = comments.map((com) => {
     return(
       <Comments
@@ -36,17 +44,17 @@ const PostPage = () => {
       title={com.title}
       body={com.body}
       username={com.username}
+      like={()=>CreateCommentVote(com.id)}
+      dislike={()=> ChangeCommentVote(com.id)}
       />
     )
   })
 
-  
   return (
     <PostsListContainer>
-      {postCard}
+      {postCard.length > 0 ? postCard: <Loading/>}
       <CreateCommentCard/>
-      {commentsCard}
-
+      {postCard.length > 0 ? commentsCard: <Loading/>}
     </PostsListContainer>
   )
 }

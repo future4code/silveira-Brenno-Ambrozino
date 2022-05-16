@@ -1,18 +1,22 @@
-export const goToFeedPage = (history) => {
-    history.push("/feed")
+export const goToFeedPage = (navigate) => {
+    navigate("/feed")
 } 
 
-export const goToLoginPage = (history) => {
-    history.push("/")
+export const goToLoginPage = (navigate) => {
+    navigate("/")
 } 
 
 
-export const goToPostPage = (history, id) => {
-    history.push(`/post/${id}`)
+export const goToPostPage = (navigate, id) => {
+    navigate(`/post/${id}`)
 } 
 
-export const goToSignUpPage = (history) => {
-    history.push("/signup")
+export const goToSignUpPage = (navigate) => {
+    navigate("/signup")
 } 
+
+export const goToBack = (navigate) => {
+    navigate(-1)
+}
  
 

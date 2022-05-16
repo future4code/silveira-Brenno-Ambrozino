@@ -11,7 +11,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header rightButtonText={rightButtonText} setRightButtonText={setRightButtonText} />
+        <Header rightButtonText={rightButtonText} setRightButtonText={setRightButtonText}/>
         <Router rightButtonText={rightButtonText} setRightButtonText={setRightButtonText}/>
       </BrowserRouter>
     </ThemeProvider>

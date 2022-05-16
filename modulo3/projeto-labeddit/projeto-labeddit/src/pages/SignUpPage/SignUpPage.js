@@ -1,12 +1,12 @@
 import React from 'react'
 import { ScreenContainer } from './Styled'
-import { useHistory } from 'react-router-dom'
+
 import SignUpForm from './SignUpForm'
 import useUnProtectedPage from '../../hooks/useUnProtectedPage'
 
 const SignUpPage = () => {
 
-  const history = useHistory()
+  
 
   useUnProtectedPage()
 

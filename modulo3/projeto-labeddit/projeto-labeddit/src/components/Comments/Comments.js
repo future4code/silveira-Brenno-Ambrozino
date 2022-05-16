@@ -49,12 +49,14 @@ const Comments = (props) => {
       <CardActions>
         <Button 
         size="small" 
-        color="primary">
+        color="primary"
+        onClick={props.like}>
           <ThumbUpAltOutlinedIcon/>
         </Button>
         <Button 
         size="small" 
-        color="primary">
+        color="primary"
+        onClick={props.dislike}>
           <ThumbDownAltOutlinedIcon/>
         </Button>
       </CardActions>

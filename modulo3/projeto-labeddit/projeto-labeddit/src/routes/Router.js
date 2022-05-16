@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import FeedPage from '../pages/FeedPage/FeedPage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import PostPage from '../pages/PostPage/PostPage'
@@ -8,23 +8,13 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage'
 
 const Router = (props) => {
   return (
-    <Switch>
-        <Route exact path = "/">
-            <LoginPage rightButtonText={props.rightButtonText} setRightButtonText={props.setRightButtonText}/>
-        </Route>
-        <Route exact path = "/feed">
-            <FeedPage/>
-        </Route>
-        <Route exact path = "/post/:id">
-            <PostPage/>
-        </Route>
-        <Route exact path = "/signup">
-            <SignUpPage/>
-        </Route>
-        <Route>
-            <ErrorPage/>
-        </Route>
-    </Switch>
+    <Routes>
+        <Route index element = {<LoginPage rightButtonText={props.rightButtonText} setRightButtonText={props.setRightButtonText}/>}/>
+        <Route path = "/feed" element={<FeedPage/>} />
+        <Route path = "/post/:id" element={<PostPage/>}/>
+        <Route path = "/signup" element={<SignUpPage/>}/>
+        <Route path= "*" element={<ErrorPage/>}/>
+    </Routes>
   )
 }
 

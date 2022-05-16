@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
 import { StyledToolbar } from './Styled'
-import { useHistory } from 'react-router-dom'
-import { goToLoginPage } from '../../routes/coordinator'
+import { useNavigate } from 'react-router-dom'
+import { goToBack, goToLoginPage } from '../../routes/coordinator'
 
 const Header = (props) => {
   
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const token = localStorage.getItem("token")
 
@@ -19,16 +19,20 @@ const Header = (props) => {
     if(token) {
       logout()
       props.setRightButtonText("Login")
-      goToLoginPage(history)
+      goToLoginPage(navigate)
     } else {
-      goToLoginPage(history)
+      goToLoginPage(navigate)
     }
+  }
+
+  const leftButtonAction = () => {
+    goToBack(navigate)
   }
 
   return (
       <AppBar position="static">
         <StyledToolbar>
-          <Button color="inherit">LabEddit</Button>
+          <Button onClick={leftButtonAction} color="inherit">LabEddit</Button>
           <Button onClick={rightButtonAction} color="inherit">{props.rightButtonText}</Button>
         </StyledToolbar>
       </AppBar>

@@ -3,22 +3,26 @@ import useProtectedPage from '../../hooks/useProtectedPage'
 import CommentsCard from '../../components/CommentsCard/CommentsCard'
 import useRequestData from '../../hooks/useRequestData'
 import  { BASE_URL }  from '../../constants/urls'
-import { PostsListContainer } from './Styled'
-import CreatePostCard from '../../components/CreatePostCard/CreatePostCard'
+import { PostsListContainer, ContainerPosts } from './Styled'
+import CreatePostCard from './CreatePostCard'
 import { goToPostPage } from '../../routes/coordinator'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import Loading from '../../components/Loading/Loading'
+import { CreatePostVote, ChangePostVote } from '../../services/posts'
 
 
 const FeedPage = () => {
 
   useProtectedPage()
-  const history = useHistory() 
+
+  const navigate = useNavigate() 
+
   const posts = useRequestData([], `${BASE_URL}/posts`)
-  console.log(posts)
 
   const onClickPost = (id) => {
-    goToPostPage(history, id)
+    goToPostPage(navigate, id)
   }
+
 
   const postsCards = posts.map((posts) => {
     return(
@@ -28,6 +32,9 @@ const FeedPage = () => {
       body={posts.body}
       username={posts.username}
       onClick={()=> onClickPost(posts.id)}
+      numeroComentarios={posts.commentCount}
+      like={()=>CreatePostVote(posts.id)}
+      dislike={()=> ChangePostVote(posts.id)}
       />
     )
   })
@@ -35,7 +42,7 @@ const FeedPage = () => {
   return (
     <PostsListContainer>
       <CreatePostCard/>
-      {postsCards}
+      {postsCards.length > 0 ? postsCards : <Loading/>}
     </PostsListContainer>
   )
 }

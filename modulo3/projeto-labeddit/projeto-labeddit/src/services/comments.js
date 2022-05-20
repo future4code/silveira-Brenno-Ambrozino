@@ -28,4 +28,18 @@ export const ChangeCommentVote = (id) => {
     console.log(err.response.data)
   })
 }
+
+export const DeleteCommentVote = (id) => {
+  axios.delete(`${BASE_URL}/comments/${id}/votes`, {
+    headers:{
+      Authorization: localStorage.getItem("token")
+    }
+  })
+  .then((res) => {
+    console.log(res)
+  })
+  .catch((err) => {
+    console.log(err.response.data)
+  })
+}
   

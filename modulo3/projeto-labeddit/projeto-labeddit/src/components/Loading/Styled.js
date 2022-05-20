@@ -5,5 +5,5 @@ export const LoadingContainer = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 30px;
+    margin-top: 30px;
 `

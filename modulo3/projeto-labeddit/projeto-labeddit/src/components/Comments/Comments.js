@@ -8,7 +8,8 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined'
 import ThumbDownAltOutlinedIcon from '@material-ui/icons/ThumbDownAltOutlined'
-
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt'
+import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt'
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +22,39 @@ const useStyles = makeStyles({
 
 const Comments = (props) => {
   const classes = useStyles();
+
+  const onClickLike = () => {
+    if(props.userVote === null || props.userVote === -1){
+      props.like()
+    } else if(props.userVote === 1) {
+      props.removeLike()
+    }
+  }
+
+  const iconeLike = () => {
+    if(props.userVote === 1) {
+      return <ThumbUpAltIcon/>
+    } else {
+      return <ThumbUpAltOutlinedIcon/>
+    }
+  }
+  
+
+  const onClickDisLike = () => {
+    if(props.userVote === null || props.userVote === 1 ){
+      props.dislike()
+    } else if (props.userVote === -1) {
+      props.removeLike()
+    }
+  }
+
+  const iconeDisLike = () => {
+    if(props.userVote === -1) {
+      return <ThumbDownAltIcon/>
+    } else  {
+      return <ThumbDownAltOutlinedIcon/>
+    }
+  }
 
   return (
     <PostCard className={classes.root}>
@@ -50,14 +84,16 @@ const Comments = (props) => {
         <Button 
         size="small" 
         color="primary"
-        onClick={props.like}>
-          <ThumbUpAltOutlinedIcon/>
+        onClick={onClickLike}>
+          {props.voteSum > 0 ? props.voteSum: ""}
+          {iconeLike()}
         </Button>
         <Button 
         size="small" 
         color="primary"
-        onClick={props.dislike}>
-          <ThumbDownAltOutlinedIcon/>
+        onClick={onClickDisLike}>
+         {props.voteSum < 0 ? props.voteSum: ""}
+         {iconeDisLike()}
         </Button>
       </CardActions>
     </PostCard>

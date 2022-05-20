@@ -3,12 +3,12 @@ import useProtectedPage from '../../hooks/useProtectedPage'
 import CommentsCard from '../../components/CommentsCard/CommentsCard'
 import useRequestData from '../../hooks/useRequestData'
 import  { BASE_URL }  from '../../constants/urls'
-import { PostsListContainer, ContainerPosts } from './Styled'
+import { PostsListContainer } from './Styled'
 import CreatePostCard from './CreatePostCard'
 import { goToPostPage } from '../../routes/coordinator'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../../components/Loading/Loading'
-import { CreatePostVote, ChangePostVote } from '../../services/posts'
+import { CreatePostVote, ChangePostVote, DeletePostVote } from '../../services/posts'
 
 
 const FeedPage = () => {
@@ -23,8 +23,9 @@ const FeedPage = () => {
     goToPostPage(navigate, id)
   }
 
+  
 
-  const postsCards = posts.map((posts) => {
+  const postsCards = posts && posts.map((posts) => {
     return(
       <CommentsCard
       key={posts.id}
@@ -34,15 +35,20 @@ const FeedPage = () => {
       onClick={()=> onClickPost(posts.id)}
       numeroComentarios={posts.commentCount}
       like={()=>CreatePostVote(posts.id)}
+      removeLike={()=>DeletePostVote(posts.id)}
       dislike={()=> ChangePostVote(posts.id)}
+      voteSum={posts.voteSum}
+      userVote={posts.userVote}
       />
     )
   })
 
+  
+
   return (
     <PostsListContainer>
       <CreatePostCard/>
-      {postsCards.length > 0 ? postsCards : <Loading/>}
+      {posts && postsCards.length > 0 ? postsCards : <Loading/>}
     </PostsListContainer>
   )
 }

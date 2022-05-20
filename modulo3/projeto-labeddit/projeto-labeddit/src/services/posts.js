@@ -64,3 +64,18 @@ export const ChangePostVote = (id) => {
     console.log(err.response.data)
   })
 }
+
+export const DeletePostVote = (id) => {
+  axios.delete(`${BASE_URL}/posts/${id}/votes`, {
+    headers:{
+      Authorization: localStorage.getItem("token")
+    }
+  })
+  .then((res) => {
+    console.log(res)
+  })
+  .catch((err) => {
+    console.log(err.response.data)
+  })
+}
+

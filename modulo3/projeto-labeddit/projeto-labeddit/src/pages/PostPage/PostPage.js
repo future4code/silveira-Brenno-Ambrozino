@@ -9,7 +9,7 @@ import CommentsCard from '../../components/CommentsCard/CommentsCard'
 import Comments from '../../components/Comments/Comments'
 import Loading from '../../components/Loading/Loading'
 import { CreatePostVote, ChangePostVote } from '../../services/posts'
-import {CreateCommentVote, ChangeCommentVote} from '../../services/comments'
+import {CreateCommentVote, ChangeCommentVote, DeleteCommentVote} from '../../services/comments'
 
 const PostPage = () => {
 
@@ -46,6 +46,9 @@ const PostPage = () => {
       username={com.username}
       like={()=>CreateCommentVote(com.id)}
       dislike={()=> ChangeCommentVote(com.id)}
+      voteSum={com.voteSum}
+      userVote={com.userVote}
+      removeLike={()=>DeleteCommentVote(com.id)}
       />
     )
   })

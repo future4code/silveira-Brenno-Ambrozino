@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import {PostCard} from './Styled'
 import CardActionArea from '@material-ui/core/CardActionArea'
@@ -24,42 +24,36 @@ const useStyles = makeStyles({
 const CommentsCard = (props) => {
   const classes = useStyles();
 
-  const [like,setLike] = useState(false)
-  const [dislike,setDisLike] = useState(false)
-
   const onClickLike = () => {
-    if(like === false){
+    if(props.userVote === null || props.userVote === -1){
       props.like()
-      setLike(true)
-    } else {
+    } else if(props.userVote === 1) {
       props.removeLike()
-      setLike(false)
     }
   }
 
   const iconeLike = () => {
-    if(like === false){
-      return <ThumbUpAltOutlinedIcon/>
-    } else {
+    if(props.userVote === 1) {
       return <ThumbUpAltIcon/>
+    } else {
+      return <ThumbUpAltOutlinedIcon/>
     }
   }
+  
 
   const onClickDisLike = () => {
-    if(dislike === false){
+    if(props.userVote === null || props.userVote === 1 ){
       props.dislike()
-      setDisLike(true)
-    } else {
-      props.removeDisLike()
-      setDisLike(false)
+    } else if (props.userVote === -1) {
+      props.removeLike()
     }
   }
 
   const iconeDisLike = () => {
-    if(dislike === false){
-      return <ThumbDownAltOutlinedIcon/>
-    } else {
+    if(props.userVote === -1) {
       return <ThumbDownAltIcon/>
+    } else  {
+      return <ThumbDownAltOutlinedIcon/>
     }
   }
 
@@ -92,12 +86,14 @@ const CommentsCard = (props) => {
         size="small" 
         color="primary"
         onClick={onClickLike}>
+          {props.voteSum > 0 ? props.voteSum: ""}
           {iconeLike()}
         </Button>
         <Button 
         size="small" 
         color="primary"
         onClick={onClickDisLike}>
+          {props.voteSum < 0 ? props.voteSum: ""}
          {iconeDisLike()}
         </Button>
         <Button 

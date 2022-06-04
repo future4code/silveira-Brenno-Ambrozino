@@ -9,9 +9,9 @@ type colaboradores = {
     salário: number;
     setor: string;
     presencial:boolean;
-}[]
+}
 
-const arrayColaboradores: colaboradores = [
+const arrayColaboradores: colaboradores[] = [
 	{ nome: "Marcos", salário: 2500, setor: SETOR.MARKETING, presencial: true },
 	{ nome: "Maria" ,salário: 1500, setor: SETOR.VENDAS, presencial: false},
 	{ nome: "Salete" ,salário: 2200, setor: SETOR.FINANCEIRO, presencial: true},
@@ -21,8 +21,8 @@ const arrayColaboradores: colaboradores = [
 	{ nome: "Paola" ,salário: 3500, setor: SETOR.MARKETING, presencial: true }
 ]
 
-const marketingPresencial = (objetos:colaboradores): colaboradores => {
-    const colaboradoresEscolhidos:colaboradores = objetos.filter((colaborador) =>{
+const marketingPresencial = (array:colaboradores[]) => {
+    const colaboradoresEscolhidos:colaboradores[] = array.filter((colaborador) =>{
         return colaborador.setor === SETOR.MARKETING && colaborador.presencial
     })
     return colaboradoresEscolhidos

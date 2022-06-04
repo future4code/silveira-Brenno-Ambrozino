@@ -13,7 +13,7 @@ type movie = {
     pontuacao?: number;
 }
 
-const movies =( name:string, year:number, genre:GENERO, points?:number): movie => {
+const movies =( name:string, year:number, genre:GENERO, points?:number) => {
     if(points){
         return{
         nome: name,

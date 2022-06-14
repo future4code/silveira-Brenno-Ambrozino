@@ -1,0 +1,10 @@
+1- a) GET
+b) "/users"
+
+2- a) passei por query params por quê era opcional as requisições
+b)
+
+3- a) Query params
+
+4- a) Continuou funcionando
+b) Não, pq o post é utilizado para adicionar e o PUT para editar os dados

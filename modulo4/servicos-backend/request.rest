@@ -1,0 +1,7 @@
+GET http://localhost:3003/endereco/24859388
+
+###
+POST http://localhost:3003/user/24859388
+
+###
+GET https://viacep.com.br/ws/24859388/json  

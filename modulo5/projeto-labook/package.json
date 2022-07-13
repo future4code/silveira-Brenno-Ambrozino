@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node ./build/index.js",
+    "start": "node ./build/index.js",
     "build": "tsc",
     "dev": "tsnd src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "tsc"
   },
+  "engines": {
+    "node": "v16.14.2"
+   },
   "keywords": [],
   "author": "Brenno Ambrozino",
   "license": "ISC",
